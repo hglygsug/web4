@@ -84,10 +84,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->execute([':user_id' => $userId, ':language' => $language]);
         }
         
-        // Сохраняем данные в Cookies на 1 год
         setcookie('saved_values', serialize($values), time() + 31536000, '/');
-        setcookie('form_errors', '', time() - 3600, '/'); // Удаляем ошибки
-        setcookie('form_values', '', time() - 3600, '/'); // Удаляем временные данные
+        setcookie('form_errors', '', time() - 3600, '/'); 
+        setcookie('form_values', '', time() - 3600, '/');
         header("Location: success.php");
         exit();
     } catch (PDOException $e) {
