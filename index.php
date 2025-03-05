@@ -16,7 +16,7 @@
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
-        <form action="submit.php" method="POST">
+        <form action="register.php" method="POST">
             <label for="fullName">ФИО:</label>
             <input type="text" id="fullName" name="fullName" value="<?= htmlspecialchars($values['fullName'] ?? '') ?>" class="<?= isset($errors['fullName']) ? 'input-error' : '' ?>" required>
 
